@@ -13,6 +13,13 @@
     "build:win": "npm run build && electron-builder --win",
     "preview": "vite preview"
   },
+  "description": "CipherLab - Cryptographic Hashes, Symmetric Encryption, HMAC, UUID v4/v7 & Multi-Format Encoding Studio",
+  "author": {
+    "name": "Rajesh Narwal",
+    "email": "rajesh@grassroot.digital",
+    "url": "https://grassroot.digital"
+  },
+  "homepage": "https://cipherlab.grassroot.digital",
   "build": {
     "appId": "digital.grassroot.cipherlab",
     "productName": "CipherLab",
@@ -35,6 +42,7 @@
     "linux": {
       "icon": "electron/icon.png",
       "category": "Development",
+      "maintainer": "Rajesh Narwal <rajesh@grassroot.digital>",
       "target": ["AppImage", "deb"]
     }
   },
