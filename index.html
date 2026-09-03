@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ec4899' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect width='18' height='11' x='3' y='11' rx='2' ry='2'/><path d='M7 11V7a5 5 0 0 1 10 0v4'/></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0d14" />
+
+    <!-- Primary SEO Title & Search Metadata -->
+    <title>CipherLab | Cryptographic Hashes, AES-256 Encryption, HMAC, UUID v4/v7 & Encoding Studio</title>
+    <meta name="title" content="CipherLab | Cryptographic Hashes, AES-256 Encryption, HMAC, UUID v4/v7 & Encoding Studio" />
+    <meta name="description" content="CipherLab is a 100% client-side cryptographic & encoding suite. Compute SHA-256, SHA-512, MD5, and HMAC signatures, perform AES-256-GCM/CBC encryption, generate bulk time-ordered UUID v7 and random UUID v4, and convert Base64, Hex, Binary, and URL encodings in local browser memory." />
+    <meta name="keywords" content="cryptographic hash generator, SHA-256 online, SHA-512, MD5 hash, HMAC generator, AES-256 encryption online, AES-GCM, UUID v7 generator, UUID v4 generator, ULID generator, Base64 encoder decoder, Hex converter, Binary converter, URL encoder, CipherLab, Grassroot Digital, Rajesh Narwal" />
+    <meta name="author" content="Rajesh Narwal" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://cipherlab.grassroot.digital/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cipherlab.grassroot.digital/" />
+    <meta property="og:site_name" content="CipherLab" />
+    <meta property="og:title" content="CipherLab | Cryptographic Hashes, AES-256 & Encoding Studio" />
+    <meta property="og:description" content="100% client-side cryptographic hashing, AES-256-GCM encryption, HMAC, UUID v7, and multi-format encoding in browser memory." />
+    <meta property="og:image" content="https://grassroot.digital/images/rajesh-narwal.jpg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://cipherlab.grassroot.digital/" />
+    <meta name="twitter:title" content="CipherLab | Privacy-First Crypto & Encoding Studio" />
+    <meta name="twitter:description" content="Compute hashes, encrypt with AES-256, generate UUID v7, and encode Base64/Hex locally with zero cloud telemetry." />
+    <meta name="twitter:image" content="https://grassroot.digital/images/rajesh-narwal.jpg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Schema.org JSON-LD Structured Data for Google Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "CipherLab",
+          "url": "https://cipherlab.grassroot.digital",
+          "applicationCategory": "SecurityApplication",
+          "operatingSystem": "All modern browsers, macOS, Windows",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "featureList": [
+            "Instant Cryptographic Hashes: SHA-256, SHA-512, SHA-384, SHA-1, MD5, CRC32 with Hex and Base64 outputs",
+            "Keyed HMAC Signatures: HMAC-SHA256, HMAC-SHA512, HMAC-SHA384, HMAC-MD5 with UTF-8 and Hex key support",
+            "Symmetric WebCrypto Encryption: AES-256-GCM and AES-256-CBC with auto-generated IVs and password derivation (PBKDF2)",
+            "UUID & Identifier Generator: Bulk UUID v4 (Random), UUID v7 (Time-Ordered), ULID, and NanoID",
+            "Multi-Format Encoder/Decoder: Bidirectional Text, Base64, Base64URL, Hex, Binary, and URL Percent encoding",
+            "Password & Key Generator with Entropy scoring and character set toggles",
+            "100% Client-Side WebCrypto execution with zero cloud storage"
+          ],
+          "author": {
+            "@type": "Person",
+            "name": "Rajesh Narwal",
+            "url": "https://grassroot.digital/#about"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Does CipherLab transmit my secret keys or passwords over the network?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. CipherLab executes 100% locally in your browser's memory using the native W3C WebCrypto API (window.crypto.subtle). Your plaintexts, passwords, hashes, and encryption keys never leave your machine."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is UUID v7 and why should I use it over UUID v4?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "UUID v7 embeds a millisecond-precision Unix timestamp in its most significant bits, making it naturally time-ordered and sortable. This provides massive B-tree database indexing performance improvements compared to random UUID v4."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body class="bg-background text-text select-none antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

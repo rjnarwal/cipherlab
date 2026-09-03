@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cipherlab.grassroot.digital/sitemap.xml
