@@ -102,6 +102,18 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span>100% In-Memory WebCrypto</span>
           </div>
 
+          {/* Desktop App Download */}
+          <a
+            href="https://github.com/rjnarwal/cipherlab/releases"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-2.5 py-1.5 rounded-lg bg-pink-500/15 hover:bg-pink-500/25 border border-pink-500/40 text-xs text-pink-400 font-semibold flex items-center space-x-1.5 transition-all shadow-sm"
+            title="Download CipherLab Native Desktop App (Mac / Windows / Linux)"
+          >
+            <span className="hidden sm:inline">Desktop App ▾</span>
+            <span className="sm:hidden">App ▾</span>
+          </a>
+
           {/* Theme Switcher */}
           <div className="flex items-center bg-background-tertiary border border-border rounded-xl p-0.5 shadow-sm">
             <button
