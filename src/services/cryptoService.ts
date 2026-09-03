@@ -388,7 +388,7 @@ export async function decryptSymmetric(
     const aesKey = await crypto.subtle.deriveKey(
       {
         name: 'PBKDF2',
-        salt,
+        salt: salt as BufferSource,
         iterations: 100000,
         hash: 'SHA-256',
       },
@@ -401,10 +401,10 @@ export async function decryptSymmetric(
     const decryptedBuf = await crypto.subtle.decrypt(
       {
         name: algorithm,
-        iv,
+        iv: iv as BufferSource,
       },
       aesKey,
-      cipherBytes
+      cipherBytes as BufferSource
     );
 
     return { plaintext: decoder.decode(decryptedBuf) };
