@@ -58,43 +58,16 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
           </div>
 
-          {/* Ecosystem Navigation Links (Shown ONLY on Web, hidden on Desktop App) */}
+          {/* Grassroot Digital Home Link (Shown ONLY on Web, hidden on Desktop App) */}
           {!isDesktop && (
             <div className="hidden lg:flex items-center space-x-1 pl-4 border-l border-border/80 text-xs">
               <a
                 href="https://grassroot.digital"
                 className="px-2.5 py-1 rounded-lg text-text-secondary hover:text-text-primary hover:bg-background-tertiary transition-colors flex items-center space-x-1"
+                title="Return to Grassroot Digital Welcome Hub"
               >
                 <Home className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Hub</span>
-              </a>
-              <a
-                href="https://endly.grassroot.digital"
-                className="px-2.5 py-1 rounded-lg text-text-secondary hover:text-text-primary hover:bg-background-tertiary transition-colors flex items-center space-x-1"
-              >
-                <Zap className="w-3.5 h-3.5 text-orange-400" />
-                <span>Endly API</span>
-              </a>
-              <a
-                href="https://tokenlens.grassroot.digital"
-                className="px-2.5 py-1 rounded-lg text-text-secondary hover:text-text-primary hover:bg-background-tertiary transition-colors flex items-center space-x-1"
-              >
-                <KeyRound className="w-3.5 h-3.5 text-purple-400" />
-                <span>TokenLens</span>
-              </a>
-              <a
-                href="https://jsonlens.grassroot.digital"
-                className="px-2.5 py-1 rounded-lg text-text-secondary hover:text-text-primary hover:bg-background-tertiary transition-colors flex items-center space-x-1"
-              >
-                <FileCode2 className="w-3.5 h-3.5 text-cyan-400" />
-                <span>JSONLens</span>
-              </a>
-              <a
-                href="https://regexforge.grassroot.digital"
-                className="px-2.5 py-1 rounded-lg text-text-secondary hover:text-text-primary hover:bg-background-tertiary transition-colors flex items-center space-x-1"
-              >
-                <span className="text-emerald-400 font-mono font-bold text-[11px]">.*</span>
-                <span>RegexForge</span>
+                <span>Home</span>
               </a>
             </div>
           )}
