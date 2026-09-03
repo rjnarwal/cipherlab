@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   ShieldCheck,
   ExternalLink,
@@ -15,6 +15,19 @@ import {
 } from 'lucide-react';
 
 import { isDesktopEnvironment, isMacDesktopEnvironment } from '../utils/platform';
+import { DownloadDesktopModal, AppDownloadConfig } from './DownloadDesktopModal';
+
+const CIPHERLAB_DOWNLOAD_CONFIG: AppDownloadConfig = {
+  appName: 'CipherLab',
+  tagline: '100% In-Memory WebCrypto Suite & Key Generator',
+  version: 'v1.0.0',
+  downloads: {
+    macArm: 'https://github.com/rjnarwal/cipherlab/releases/download/v1.0.0/CipherLab-1.0.0-arm64.dmg',
+    macIntel: 'https://github.com/rjnarwal/cipherlab/releases/download/v1.0.0/CipherLab-1.0.0.dmg',
+    winX64: 'https://github.com/rjnarwal/cipherlab/releases/download/v1.0.0/CipherLab-Setup-1.0.0.exe',
+    linuxAppImage: 'https://github.com/rjnarwal/cipherlab/releases/download/v1.0.0/CipherLab-1.0.0.AppImage',
+  },
+};
 
 interface NavbarProps {
   theme: 'dark' | 'midnight' | 'light';
@@ -29,6 +42,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   activeTab,
   onTabChange,
 }) => {
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false);
   const isDesktop = isDesktopEnvironment();
   const isMac = isMacDesktopEnvironment();
 
@@ -82,16 +96,14 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Desktop App Download (Only on Web) */}
           {!isDesktop && (
-            <a
-              href="https://github.com/rjnarwal/cipherlab/releases"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-2.5 py-1.5 rounded-lg bg-pink-500/15 hover:bg-pink-500/25 border border-pink-500/40 text-xs text-pink-400 font-semibold flex items-center space-x-1.5 transition-all shadow-sm"
+            <button
+              onClick={() => setIsDownloadModalOpen(true)}
+              className="px-2.5 py-1.5 rounded-lg bg-pink-500/15 hover:bg-pink-500/25 border border-pink-500/40 text-xs text-pink-400 font-semibold flex items-center space-x-1.5 transition-all shadow-sm cursor-pointer"
               title="Download CipherLab Native Desktop App (Mac / Windows / Linux)"
             >
               <span className="hidden sm:inline">Desktop App ▾</span>
               <span className="sm:hidden">App ▾</span>
-            </a>
+            </button>
           )}
 
           {/* Theme Switcher */}
@@ -126,6 +138,15 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
         </div>
       </div>
+
+      {/* Direct OS Binary Download Modal */}
+      {!isDesktop && (
+        <DownloadDesktopModal
+          isOpen={isDownloadModalOpen}
+          onClose={() => setIsDownloadModalOpen(false)}
+          config={CIPHERLAB_DOWNLOAD_CONFIG}
+        />
+      )}
     </header>
   );
 };
